@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wedding Celebration: Alex & Taylor</title>
+    <!-- Google Fonts: Pinyon Script for bespoke luxury accents, Tenor Sans for crisp structural minimalism -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Tenor+Sans&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Luxury Lookbook Design System --- */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        :root {
+            --velvet-deep: #12161a;     /* Midnight Dark Canvas */
+            --velvet-soft: #1a2026;     /* Light Matte Charcoal */
+            --gold-bright: #e5c158;     /* Rich Champagne Gold */
+            --gold-dim: #bfa15f;        /* Antique Cast Gold */
+            --text-light: #f5f6f7;      /* Crisp Editorial Ivory */
+            --text-muted: #9aa0a6;      /* Fine Slate Grey */
+        }
+        body {
+            font-family: 'Tenor Sans', sans-serif;
+            background-color: var(--velvet-deep);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3 {
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .script-font {
+            font-family: 'Pinyon Script', cursive;
+            text-transform: none;
+            letter-spacing: normal;
+            color: var(--gold-bright);
+        }
+
+        /* --- IMMERSIVE FULLSCREEN INTRO --- */
+        .intro-container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            position: relative;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, #1e262f 0%, var(--velvet-deep) 70%);
+        }
+        .intro-frame {
+            border: 1px solid rgba(229, 193, 88, 0.2);
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            background: rgba(18, 22, 26, 0.6);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+        /* Corner Frame Elements */
+        .intro-frame::before, .intro-frame::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 1px solid var(--gold-bright);
+        }
+        .intro-frame::before { top: -5px; left: -5px; border-right: none; border-bottom: none; }
+        .intro-frame::after { bottom: -5px; right: -5px; border-left: none; border-top: none; }
+
+        .main-heading {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+            letter-spacing: 0.2em;
+        }
+        .cursive-separator {
+            font-size: 3.5rem;
+            display: block;
+            margin: -15px 0;
+        }
+        .intro-details {
+            font-size: 0.85rem;
+            letter-spacing: 0.4em;
+            color: var(--gold-bright);
+            margin-top: 25px;
+            text-transform: uppercase;
+        }
+
+        /* --- THE EXPERIMENTAL CHRONICLE REEL (OUR STORY) --- */
+        .chronicle-section {
+            padding: 120px 0;
+            background-color: var(--velvet-soft);
+        }
+        .chronicle-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .chronicle-header h2 {
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        .film-container {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 40px 60px 40px;
+            gap: 30px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; /* Hide standard scrollbar */
+        }
+        .film-container::-webkit-scrollbar {
+            display: none; /* Hide Chrome/Safari scrollbar */
+        }
+        .film-strip {
+            flex: 0 0 450px;
+            background: var(--velvet-deep);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 25px;
+            scroll-snap-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            transition: transform 0.4s;
+        }
+        .film-strip:hover {
+            transform: translateY(-10px);
+            border-color: rgba(229, 193, 88, 0.3);
+        }
+        .film-img-box {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(229, 193, 88, 0.1);
+        }
+        .film-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(40%) sepia(20%);
+            transition: transform 0.6s;
+        }
+        .film-strip:hover .film-img-box img {
+            transform: scale(1.05);
+            filter: grayscale(0%);
+        }
+        .film-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.75rem;
+            color: var(--gold-dim);
+            letter-spacing: 0.1em;
+        }
+        .film-title {
+            font-size: 1.1rem;
+            color: #ffffff;
+            margin: 10px 0 5px 0;
+            letter-spacing: 0.05em;
+        }
+        .film-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 300;
+        }
+
+        /* --- THE INTERACTIVE EXHIBITION TAB SHEET (DETAILS) --- */
+        .exhibit-section {
+            padding: 120px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .tab-nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 15px;
+        }
+        .tab-trigger {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding-bottom: 12px;
+            position: relative;
+            transition: color 0.3s;
+        }
+        .tab-trigger.active {
+            color: var(--gold-bright);
+        }
+        .tab-trigger.active::after {
+            content: '';
+            position: absolute;
+            bottom: -16px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--gold-bright);
+        }
+        .tab-content {
+            display: none;
+            padding: 60px 40px;
+            background: var(--velvet-soft);
+            margin-top: 2px;
+            animation: paneFade 0.5s ease forward;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        .venue-title {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+        .venue-time {
+            font-size: 0.85rem;
+            color: var(--gold-bright);
+            letter-spacing: 0.3em;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+        .btn-outline-gold {
+            display: inline-block;
+            padding: 12px 35px;
+            border: 1px solid var(--gold-bright);
+            color: var(--gold-bright);
+            text-decoration: none;
+            font-size: 0.75rem;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .btn-outline-gold:hover {
+            background-color: var(--gold-bright);
+            color: var(--velvet-deep);
+            box-shadow: 0 0 20px rgba(229, 193, 88, 0.3);
+        }
+
+        /* --- THE GOLD METALLIC RSVP PORTAL --- */
+        .rsvp-section {
+            background: linear-gradient(rgba(18, 22, 26, 0.9), rgba(18, 22, 26, 0.95)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1500') center/cover no-repeat;
+            padding: 120px 20px;
+            border-top: 1px solid rgba(229, 193, 88, 0.15);
+        }
+        .rsvp-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(26, 32, 38, 0.85);
+            padding: 50px 40px;
+            border: 1px solid rgba(229, 193, 88, 0.2);
+            backdrop-filter: blur(8px);
+        }
+        .form-row {
+            margin-bottom: 30px;
+        }
+        .form-row label {
+            display: block;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--gold-dim);
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .form-row input, .form-row select, .form-row textarea {
+            width: 100%;
+            background: var(--velvet-deep);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 14px;
+            font-family: 'Tenor Sans', sans-serif;
+            color: #ffffff;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+            border-color: var(--gold-bright);
+        }
+        .btn-gold-solid {
+            width: 100%;
+            padding: 16px;
+            background-color: var(--gold-bright);
+            color: var(--velvet-deep);
+            border: none;
+            font-family: 'Tenor Sans', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 600;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+        .btn-gold-solid:hover {
+            opacity: 0.9;
+        }
+
+        /* --- THE COUTUR REGISTRY & FOOTER --- */
+        .registry-block {
+            padding: 90px 20px;
+            text-align: center;
+        }
+        .registry-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+        footer {
+            padding: 40px 20px;
+            background-color: var(--velvet-soft);
+            font-size: 0.75rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        @keyframes paneFade {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* --- Mobile Adaptations --- */
+        @media(max-width: 600px) {
+            .main-heading { font-size: 2.2rem; }
+            .film-strip { flex: 0 0 290px; padding: 15px; }
+            .film-img-box { height: 200px; }
+            .tab-nav { gap: 15px; }
+            .tab-trigger { font-size: 0.75rem; }
+            .tab-content { padding: 40px 20px; }
+            .rsvp-box { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SCREEN INTRO DUO -->
+    <div class="intro-container">
+        <div class="intro-frame">
+            <h1 class="main-heading">Alex</h1>
+            <span class="script-font cursive-separator">and</span>
+            <h1 class="main-heading">Taylor</h1>
+            <p class="intro-details">October 17, 2026 • Savannah, GA</p>
+        </div>
+    </div>
+
+    <!-- THE HORIZONTAL FILM CHRONICLE SECTION -->
+    <section class="chronicle-section">
+        <div class="chronicle-header">
+            <h2>Our Chronicle</h2>
+            <p class="script-font" style="font-size: 2rem; margin-top: 5px;">captured frames</p>
+        </div>
+        
+        <div class="film-container">
+            <div class="film-strip">
+                <div class="film-img-box"><img src="images/001.jpg" alt="Memory 1"></div>
+                <div class="film-meta"><span>CHAPTER I</span><span>2019</span></div>
+                <h3 class="film-title">Where it began</h3>
+                <p class="film-desc">A modern meeting over standard afternoon coffees sparked a lifelong bond.</p>
+            </div>
+            <div class="film-strip">
+                <div class="film-img-box"><img src="images/003.webp" alt="Memory 2"></div>
+                <div class="film-meta"><span>CHAPTER II</span><span>2021</span></div>
+                <h3 class="film-title">First Adventure</h3>
+                <p class="film-desc">Escaping out into the high-coast ridges for our first mountain venture.</p>
+            </div>
+            <div class="film-strip">
+                <div class="film-img-box"><img src="images/002.avif" alt="Memory 3"></div>
+                <div class="film-meta"><span>CHAPTER III</span><span>2024</span></div>
+                <h3 class="film-title">The Proposal</h3>
+                <p class="film-desc">Under a canopy of stars, we committed to an infinite future together.</p>
+            </div>
+            <div class="film-strip">
+                <div class="film-img-box"><img src="images/004.jpg" alt="Memory 4"></div>
+                <div class="film-meta"><span>CHAPTER IV</span><span>2025</span></div>
+                <h3 class="film-title">Spring Days</h3>
+                <p class="film-desc">Building an anchor for ourselves inside our quiet historic apartment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABBED INTERACTIVE DETAILS SECTION -->
+    <section class="exhibit-section">
+        <h2>The Exhibition</h2>
+        <p class="script-font" style="font-size: 2rem;">wedding itinerary</p>
+        
+        <div class="tab-nav">
+            <button class="tab-trigger active" onclick="switchTab(event, 'ceremony')">The Ceremony</button>
+            <button class="tab-trigger" onclick="switchTab(event, 'reception')">The Reception</button>
+        </div>
+
+        <div id="ceremony" class="tab-content active">
+            <h3 class="venue-title">The Forsyth Park Fountain</h3>
+            <p class="venue-time">Four-Thirty In the Afternoon</p>
+            <p style="color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Join us open-air on the North Promenade as we trade our vows in front of the historic iron monument framing the square.
+            </p>
+            <a href="#" class="btn-outline-gold">View Location coordinates</a>
+        </div>
+
+        <div id="reception" class="tab-content">
+            <h3 class="venue-title">The Harper Boutique Hotel</h3>
+            <p class="venue-time">Six O'Clock In the Evening</p>
+            <p style="color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                An indoor dining celebration with fine cocktails, live jazz curation, and reception courses extending late into the night.
+            </p>
+            <a href="#" class="btn-outline-gold">View Reception details</a>
+        </div>
+    </section>
+
+    <!-- METALLIC INVERSE RSVP PORTAL -->
+    <section class="rsvp-section">
+        <div class="rsvp-box">
+            <h2>The Registry</h2>
+            <p class="script-font" style="font-size: 2.2rem; margin-bottom: 30px;">secure your space</p>
+            
+            <form onsubmit="event.preventDefault(); alert('Response documented successfully.');">
+                <div class="form-row">
+                    <label>Guest Identity</label>
+                    <input type="text" placeholder="Your full name" required>
+                </div>
+                <div class="form-row">
+                    <label>Attendance Status</label>
+                    <select required>
+                        <option value="" disabled selected>Select alternative</option>
+                        <option value="yes">Accepts with Pleasure</option>
+                        <option value="no">Declines with Regret</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label>Accommodations Note</label>
+                    <textarea rows="3" placeholder="Dietary concerns or special requests..."></textarea>
+                </div>
+                <button type="submit" class="btn-gold-solid">Validate Attendance</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- LUXURY COUTUR REGISTRY LINK HOVER -->
+    <section class="registry-block">
+        <h2>Endowment</h2>
+        <div class="registry-links">
+            <a href="#" class="btn-outline-gold">Zola Registry</a>
+            <a href="#" class="btn-outline-gold">Boutique Fund</a>
+        </div>
+    </section>
+
+    <!-- FOOTER TERMINATION -->
+    <footer>
+        A & T • 10.17.2026 • Design Layout Complete
+    </footer>
+
+    <!-- INTERACTIVE ENGINE SCRIPT -->
+    <script>
+        function switchTab(event, tabId) {
+            // Remove active status from all triggers
+            document.querySelectorAll('.tab-trigger').forEach(btn => btn.classList.remove('active'));
+            // Remove active status from all content containers
+            document.querySelectorAll('.tab-content').forEach(pane => pane.classList.remove('active'));
+            
+            // Set targeted layout visible
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
