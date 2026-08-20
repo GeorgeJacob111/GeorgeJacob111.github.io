@@ -3,476 +3,518 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Wedding Celebration: Alex & Taylor</title>
-    <!-- Google Fonts: Pinyon Script for bespoke luxury accents, Tenor Sans for crisp structural minimalism -->
+    <title>Our Wedding Invitation - Gold Showcase</title>
+    <!-- Google Fonts: Playfair Display for Classic Elegance & Montserrat for Clean Details -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght=0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Luxury Lookbook Design System --- */
+        /* --- Gold Luxe Design System --- */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
         :root {
-            --velvet-deep: #12161a;     /* Midnight Dark Canvas */
-            --velvet-soft: #1a2026;     /* Light Matte Charcoal */
-            --gold-bright: #e5c158;     /* Rich Champagne Gold */
-            --gold-dim: #bfa15f;        /* Antique Cast Gold */
-            --text-light: #f5f6f7;      /* Crisp Editorial Ivory */
-            --text-muted: #9aa0a6;      /* Fine Slate Grey */
+            --gold-primary: #c5a059; /* Soft Metallic Gold */
+            --gold-dark: #8a6d3b;    /* Deep Antique Gold */
+            --gold-light: #f4ebd0;   /* Light Champagne */
+            --bg-cream: #faf8f5;     /* Warm Alabaster/Ivory */
+            --text-dark: #2c2a29;    /* Charcoal Black */
+            --text-muted: #6b6765;
         }
         body {
-            font-family: 'Tenor Sans', sans-serif;
-            background-color: var(--velvet-deep);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            text-align: center;
+            overflow-x: hidden; /* Prevents horizontal scrolling from the carousel */
         }
         h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
             font-weight: 400;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-        }
-        .script-font {
-            font-family: 'Pinyon Script', cursive;
-            text-transform: none;
-            letter-spacing: normal;
-            color: var(--gold-bright);
         }
 
-        /* --- IMMERSIVE FULLSCREEN INTRO --- */
-        .intro-container {
-            height: 100vh;
-            width: 100vw;
+        /* --- Hero Section --- */
+        header {
+            min-height: 100vh;
             display: flex;
-            position: relative;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            /* Elegant bokeh & silk overlay background */
+            background: linear-gradient(rgba(250, 248, 245, 0.9), rgba(250, 248, 245, 0.85)), 
+                        url('https://images.unsplash.com/photo-1507504038482-7621ef488ce9?q=80&w=1920') center/cover no-repeat;
+            border-bottom: 4px double var(--gold-primary);
+        }
+        .logo-text {
+            font-size: 4.5rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            color: var(--gold-dark);
+            /* Rich metallic gold gradient split */
+            background: linear-gradient(35deg, #8a6d3b 0%, #c5a059 50%, #8a6d3b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .tagline {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-weight: 500;
+        }
+        .date-line {
+            font-size: 1.1rem;
+            letter-spacing: 3px;
+            font-weight: 400;
+            color: var(--text-dark);
+        }
+
+        /* --- Elegant Gold Dividers --- */
+        .divider {
+            display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(circle at center, #1e262f 0%, var(--velvet-deep) 70%);
+            margin: 25px auto;
+            width: 200px;
         }
-        .intro-frame {
-            border: 1px solid rgba(229, 193, 88, 0.2);
-            padding: 60px 40px;
-            text-align: center;
-            max-width: 600px;
-            width: 90%;
-            background: rgba(18, 22, 26, 0.6);
-            backdrop-filter: blur(10px);
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--gold-primary), transparent);
+        }
+        .divider-diamond {
+            color: var(--gold-primary);
+            font-size: 12px;
+            margin: 0 10px;
+        }
+
+        /* --- Countdown Clock --- */
+        .countdown-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .countdown-box {
+            background: #ffffff;
+            padding: 15px 22px;
+            border-radius: 4px;
+            min-width: 85px;
+            box-shadow: 0 4px 20px rgba(138, 109, 59, 0.08);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+        .countdown-box span {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 400;
+            font-family: 'Playfair Display', serif;
+            color: var(--gold-dark);
+        }
+        .countdown-box label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+
+        /* --- Content Sections --- */
+        section {
+            padding: 100px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .section-title {
+            font-size: 3rem;
+            color: var(--text-dark);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        /* ================================================================= */
+        /* --- INFINITE GOLDEN SHOWCASE REEL TRACK --- */
+        /* ================================================================= */
+        .showcase-wrapper {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background: linear-gradient(to bottom, #ffffff, #fcfaf6, #ffffff);
+            padding: 60px 0;
+            overflow: hidden;
+            border-top: 1px solid rgba(197, 160, 89, 0.15);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
+        }
+        
+        .reel-track {
+            display: flex;
+            width: calc(320px * 12 + 40px * 12); 
+            gap: 40px;
+            animation: infiniteScroll 35s linear infinite;
+        }
+
+        /* Auto-pause sliding motion when reviewing a memory card */
+        .showcase-wrapper:hover .reel-track {
+            animation-play-state: paused;
+        }
+
+        .reel-card {
+            width: 320px;
+            background: #ffffff;
+            padding: 15px 15px 40px 15px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            box-shadow: 0 10px 30px rgba(138, 109, 59, 0.03);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
         }
-        /* Corner Frame Elements */
-        .intro-frame::before, .intro-frame::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            border: 1px solid var(--gold-bright);
-        }
-        .intro-frame::before { top: -5px; left: -5px; border-right: none; border-bottom: none; }
-        .intro-frame::after { bottom: -5px; right: -5px; border-left: none; border-top: none; }
 
-        .main-heading {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: #ffffff;
-            letter-spacing: 0.2em;
-        }
-        .cursive-separator {
-            font-size: 3.5rem;
-            display: block;
-            margin: -15px 0;
-        }
-        .intro-details {
-            font-size: 0.85rem;
-            letter-spacing: 0.4em;
-            color: var(--gold-bright);
-            margin-top: 25px;
-            text-transform: uppercase;
-        }
-
-        /* --- THE EXPERIMENTAL CHRONICLE REEL (OUR STORY) --- */
-        .chronicle-section {
-            padding: 120px 0;
-            background-color: var(--velvet-soft);
-        }
-        .chronicle-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-        .chronicle-header h2 {
-            font-size: 2rem;
-            color: #ffffff;
-        }
-        .film-container {
-            display: flex;
-            overflow-x: auto;
-            padding: 20px 40px 60px 40px;
-            gap: 30px;
-            scroll-snap-type: x mandatory;
-            scrollbar-width: none; /* Hide standard scrollbar */
-        }
-        .film-container::-webkit-scrollbar {
-            display: none; /* Hide Chrome/Safari scrollbar */
-        }
-        .film-strip {
-            flex: 0 0 450px;
-            background: var(--velvet-deep);
-            border: 1px solid rgba(255,255,255,0.05);
-            padding: 25px;
-            scroll-snap-align: center;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            transition: transform 0.4s;
-        }
-        .film-strip:hover {
-            transform: translateY(-10px);
-            border-color: rgba(229, 193, 88, 0.3);
-        }
-        .film-img-box {
+        .img-frame {
             width: 100%;
-            height: 300px;
+            aspect-ratio: 4/5;
             overflow: hidden;
-            margin-bottom: 20px;
-            border-bottom: 1px solid rgba(229, 193, 88, 0.1);
+            background-color: #faf8f5;
         }
-        .film-img-box img {
+
+        .reel-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(40%) sepia(20%);
-            transition: transform 0.6s;
-        }
-        .film-strip:hover .film-img-box img {
-            transform: scale(1.05);
-            filter: grayscale(0%);
-        }
-        .film-meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.75rem;
-            color: var(--gold-dim);
-            letter-spacing: 0.1em;
-        }
-        .film-title {
-            font-size: 1.1rem;
-            color: #ffffff;
-            margin: 10px 0 5px 0;
-            letter-spacing: 0.05em;
-        }
-        .film-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 300;
+            filter: sepia(35%) contrast(95%); /* Warm champagne undertone tint */
+            transition: all 0.5s ease;
         }
 
-        /* --- THE INTERACTIVE EXHIBITION TAB SHEET (DETAILS) --- */
-        .exhibit-section {
-            padding: 120px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
+        /* Interactive lift frame accentuation */
+        .reel-card:hover {
+            transform: scale(1.05) translateY(-5px);
+            border-color: var(--gold-primary);
+            box-shadow: 0 20px 45px rgba(138, 109, 59, 0.15);
+            z-index: 5;
         }
-        .tab-nav {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 40px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 15px;
+
+        .reel-card:hover img {
+            filter: sepia(0%) contrast(100%); /* Returns image to true rich coloring on focus */
         }
-        .tab-trigger {
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            font-family: 'Tenor Sans', sans-serif;
-            font-size: 0.9rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            cursor: pointer;
-            padding-bottom: 12px;
-            position: relative;
-            transition: color 0.3s;
-        }
-        .tab-trigger.active {
-            color: var(--gold-bright);
-        }
-        .tab-trigger.active::after {
-            content: '';
+
+        .card-tag {
             position: absolute;
-            bottom: -16px;
+            bottom: 12px;
             left: 0;
             width: 100%;
-            height: 2px;
-            background-color: var(--gold-bright);
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--gold-dark);
+            letter-spacing: 1px;
         }
-        .tab-content {
-            display: none;
-            padding: 60px 40px;
-            background: var(--velvet-soft);
-            margin-top: 2px;
-            animation: paneFade 0.5s ease forward;
+
+        /* Seamless Infinite Carousel Loop Keyframe Engine */
+        @keyframes infiniteScroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-360px * 6)); }
         }
-        .tab-content.active {
-            display: block;
+
+        /* --- Details Section --- */
+        .details-bg {
+            background-color: #fcfaf6;
+            background-image: radial-gradient(rgba(197, 160, 89, 0.03) 1px, transparent 0);
+            background-size: 24px 24px;
+            max-width: 100%;
+            border-bottom: 1px solid rgba(197, 160, 89, 0.15);
         }
-        .venue-title {
-            font-size: 1.8rem;
-            color: #ffffff;
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        .card {
+            background: #ffffff;
+            padding: 50px 40px;
+            border-radius: 4px;
+            box-shadow: 0 10px 35px rgba(44, 42, 41, 0.03);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            position: relative;
+        }
+        /* Thin ornate internal gold frame border accent */
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 10px; left: 10px; right: 10px; bottom: 10px;
+            border: 1px solid rgba(197, 160, 89, 0.1);
+            pointer-events: none;
+        }
+        .card h3 {
+            font-size: 1.6rem;
             margin-bottom: 15px;
+            color: var(--gold-dark);
+            font-style: italic;
         }
-        .venue-time {
-            font-size: 0.85rem;
-            color: var(--gold-bright);
-            letter-spacing: 0.3em;
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
             margin-bottom: 30px;
-            text-transform: uppercase;
+            font-weight: 300;
         }
-        .btn-outline-gold {
+        .btn-link {
             display: inline-block;
-            padding: 12px 35px;
-            border: 1px solid var(--gold-bright);
-            color: var(--gold-bright);
+            padding: 12px 30px;
+            border: 1px solid var(--gold-primary);
+            color: var(--gold-dark);
             text-decoration: none;
-            font-size: 0.75rem;
-            letter-spacing: 0.25em;
             text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
             transition: all 0.3s;
         }
-        .btn-outline-gold:hover {
-            background-color: var(--gold-bright);
-            color: var(--velvet-deep);
-            box-shadow: 0 0 20px rgba(229, 193, 88, 0.3);
+        .btn-link:hover {
+            background-color: var(--gold-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.3);
         }
 
-        /* --- THE GOLD METALLIC RSVP PORTAL --- */
-        .rsvp-section {
-            background: linear-gradient(rgba(18, 22, 26, 0.9), rgba(18, 22, 26, 0.95)), 
-                        url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1500') center/cover no-repeat;
-            padding: 120px 20px;
-            border-top: 1px solid rgba(229, 193, 88, 0.15);
+        /* --- RSVP Block --- */
+        #rsvp {
+            background-color: #ffffff;
+            max-width: 650px;
+            margin: 50px auto 0 auto;
+            padding: 60px 50px;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            box-shadow: 0 15px 50px rgba(138, 109, 59, 0.05);
         }
-        .rsvp-box {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(26, 32, 38, 0.85);
-            padding: 50px 40px;
-            border: 1px solid rgba(229, 193, 88, 0.2);
-            backdrop-filter: blur(8px);
-        }
-        .form-row {
+        .form-group {
+            text-align: left;
             margin-bottom: 30px;
         }
-        .form-row label {
+        .form-group label {
             display: block;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--gold-dim);
-            margin-bottom: 10px;
-            text-align: left;
-        }
-        .form-row input, .form-row select, .form-row textarea {
-            width: 100%;
-            background: var(--velvet-deep);
-            border: 1px solid rgba(255,255,255,0.1);
-            padding: 14px;
-            font-family: 'Tenor Sans', sans-serif;
-            color: #ffffff;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
-            border-color: var(--gold-bright);
-        }
-        .btn-gold-solid {
-            width: 100%;
-            padding: 16px;
-            background-color: var(--gold-bright);
-            color: var(--velvet-deep);
-            border: none;
-            font-family: 'Tenor Sans', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
+            font-size: 0.8rem;
             font-weight: 600;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        .btn-gold-solid:hover {
-            opacity: 0.9;
-        }
-
-        /* --- THE COUTUR REGISTRY & FOOTER --- */
-        .registry-block {
-            padding: 90px 20px;
-            text-align: center;
-        }
-        .registry-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        footer {
-            padding: 40px 20px;
-            background-color: var(--velvet-soft);
-            font-size: 0.75rem;
-            letter-spacing: 0.3em;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            color: var(--text-muted);
-            border-top: 1px solid rgba(255,255,255,0.05);
-            text-align: center;
+            letter-spacing: 1.5px;
+            color: var(--text-dark);
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid rgba(197, 160, 89, 0.25);
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            outline: none;
+            background-color: #fffcf8;
+            transition: all 0.3s;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--gold-dark);
+            background-color: #ffffff;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, var(--gold-primary) 0%, var(--gold-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(138, 109, 59, 0.2);
         }
 
-        @keyframes paneFade {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- Mobile Adaptations --- */
-        @media(max-width: 600px) {
-            .main-heading { font-size: 2.2rem; }
-            .film-strip { flex: 0 0 290px; padding: 15px; }
-            .film-img-box { height: 200px; }
-            .tab-nav { gap: 15px; }
-            .tab-trigger { font-size: 0.75rem; }
-            .tab-content { padding: 40px 20px; }
-            .rsvp-box { padding: 30px 20px; }
+        footer {
+            padding: 60px 20px;
+            background-color: var(--text-dark);
+            color: var(--gold-light);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-top: 3px solid var(--gold-primary);
         }
     </style>
 </head>
 <body>
 
-    <!-- SCREEN INTRO DUO -->
-    <div class="intro-container">
-        <div class="intro-frame">
-            <h1 class="main-heading">Alex</h1>
-            <span class="script-font cursive-separator">and</span>
-            <h1 class="main-heading">Taylor</h1>
-            <p class="intro-details">October 17, 2026 • Savannah, GA</p>
+    <!-- HERO HEADER -->
+    <header>
+        <p class="tagline">ORIGIN EVENT PLANNERS</p>
+        <h1 class="logo-text">JOSSIN & MERIN</h1>
+        <p class="tagline">Are getting married</p>
+        <p class="date-line">AUGUST 24, 2026 • ANGELVALLEY</p>
+        <div class="divider"><span class="divider-diamond">♦</span></div>
+        
+        <!-- COUNTDOWN -->
+        <div class="countdown-container">
+            <div class="countdown-box"><span id="days">00</span><label>Days</label></div>
+            <div class="countdown-box"><span id="hours">00</span><label>Hours</label></div>
+            <div class="countdown-box"><span id="minutes">00</span><label>Mins</label></div>
+            <div class="countdown-box"><span id="seconds">00</span><label>Secs</label></div>
+        </div>
+    </header>
+
+    <!-- STORY -->
+    <section id="story">
+        <h2 class="section-title">Our Story</h2>
+        <div class="divider"><span class="divider-diamond">♦</span></div>
+        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto; font-weight: 300;">
+            With the grace of God and the blessings of our families, our journey together is a celebration of faith and heritage. Hand in hand, we now embark on this beautiful life of togetherness, rooted in love and guided by the values we cherish.
+        </p>
+    </section>
+
+    <!-- INFINITE SHOWCASE CAROUSEL TRACK -->
+    <div class="showcase-wrapper">
+        <div class="reel-track">
+            <!-- Set 1 (Original 6 Images) -->
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_001.jpg" alt="Img 1"></div>
+                <div class="card-tag">Where it began</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_002.jpg" alt="Img 2"></div>
+                <div class="card-tag">First Adventure</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_002.jpg" alt="Img 3"></div>
+                <div class="card-tag">The Proposal</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_004.jpg" alt="Img 4"></div>
+                <div class="card-tag">Spring Days</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_005.jpg" alt="Img 5"></div>
+                <div class="card-tag">Saying Yes</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_006.jpg" alt="Img 6"></div>
+                <div class="card-tag">Forever Together</div>
+            </div>
+
+            <!-- Set 2 (Identical Clones for Seamless Infinite Loop Splice) -->
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_001.jpg" alt="Img 1"></div>
+                <div class="card-tag">Where it began</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_002.jpg" alt="Img 2"></div>
+                <div class="card-tag">First Adventure</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_003.jpg" alt="Img 3"></div>
+                <div class="card-tag">The Proposal</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_004.jpg" alt="Img 4"></div>
+                <div class="card-tag">Spring Days</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_005.jpg" alt="Img 5"></div>
+                <div class="card-tag">Saying Yes</div>
+            </div>
+            <div class="reel-card">
+                <div class="img-frame"><img src="images/jossin_006.jpg" alt="Img 6"></div>
+                <div class="card-tag">Forever Together</div>
+            </div>
         </div>
     </div>
 
-    <!-- THE HORIZONTAL FILM CHRONICLE SECTION -->
-    <section class="chronicle-section">
-        <div class="chronicle-header">
-            <h2>Our Chronicle</h2>
-            <p class="script-font" style="font-size: 2rem; margin-top: 5px;">captured frames</p>
-        </div>
-        
-        <div class="film-container">
-            <div class="film-strip">
-                <div class="film-img-box"><img src="images/001.jpg" alt="Memory 1"></div>
-                <div class="film-meta"><span>CHAPTER I</span><span>2019</span></div>
-                <h3 class="film-title">Where it began</h3>
-                <p class="film-desc">A modern meeting over standard afternoon coffees sparked a lifelong bond.</p>
-            </div>
-            <div class="film-strip">
-                <div class="film-img-box"><img src="images/003.webp" alt="Memory 2"></div>
-                <div class="film-meta"><span>CHAPTER II</span><span>2021</span></div>
-                <h3 class="film-title">First Adventure</h3>
-                <p class="film-desc">Escaping out into the high-coast ridges for our first mountain venture.</p>
-            </div>
-            <div class="film-strip">
-                <div class="film-img-box"><img src="images/002.avif" alt="Memory 3"></div>
-                <div class="film-meta"><span>CHAPTER III</span><span>2024</span></div>
-                <h3 class="film-title">The Proposal</h3>
-                <p class="film-desc">Under a canopy of stars, we committed to an infinite future together.</p>
-            </div>
-            <div class="film-strip">
-                <div class="film-img-box"><img src="images/004.jpg" alt="Memory 4"></div>
-                <div class="film-meta"><span>CHAPTER IV</span><span>2025</span></div>
-                <h3 class="film-title">Spring Days</h3>
-                <p class="film-desc">Building an anchor for ourselves inside our quiet historic apartment.</p>
-            </div>
-        </div>
-    </section>
+    <!-- DETAILS -->
+    <section id="details" class="details-bg">
+        <div style="max-width: 900px; margin: 0 auto;">
+            <h2 class="section-title">The Celebration</h2>
+            <div class="divider"><span class="divider-diamond">♦</span></div>
+            <div class="details-grid">
+                <div class="card">
+                    <h3>The Ceremony</h3>
+                    <p><strong>10:30 PM</strong><br>ST.Mary's Chruch Angelvalley<br></p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=St. Mary's Church, AngelValley, Angel Valley, Perunad, Kerala 686510" class="btn-link">View Venue Location</a>
+                    
 
-    <!-- TABBED INTERACTIVE DETAILS SECTION -->
-    <section class="exhibit-section">
-        <h2>The Exhibition</h2>
-        <p class="script-font" style="font-size: 2rem;">wedding itinerary</p>
-        
-        <div class="tab-nav">
-            <button class="tab-trigger active" onclick="switchTab(event, 'ceremony')">The Ceremony</button>
-            <button class="tab-trigger" onclick="switchTab(event, 'reception')">The Reception</button>
-        </div>
 
-        <div id="ceremony" class="tab-content active">
-            <h3 class="venue-title">The Forsyth Park Fountain</h3>
-            <p class="venue-time">Four-Thirty In the Afternoon</p>
-            <p style="color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Join us open-air on the North Promenade as we trade our vows in front of the historic iron monument framing the square.
-            </p>
-            <a href="#" class="btn-outline-gold">View Location coordinates</a>
-        </div>
-
-        <div id="reception" class="tab-content">
-            <h3 class="venue-title">The Harper Boutique Hotel</h3>
-            <p class="venue-time">Six O'Clock In the Evening</p>
-            <p style="color: var(--text-muted); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
-                An indoor dining celebration with fine cocktails, live jazz curation, and reception courses extending late into the night.
-            </p>
-            <a href="#" class="btn-outline-gold">View Reception details</a>
-        </div>
-    </section>
-
-    <!-- METALLIC INVERSE RSVP PORTAL -->
-    <section class="rsvp-section">
-        <div class="rsvp-box">
-            <h2>The Registry</h2>
-            <p class="script-font" style="font-size: 2.2rem; margin-bottom: 30px;">secure your space</p>
-            
-            <form onsubmit="event.preventDefault(); alert('Response documented successfully.');">
-                <div class="form-row">
-                    <label>Guest Identity</label>
-                    <input type="text" placeholder="Your full name" required>
+                    
                 </div>
-                <div class="form-row">
-                    <label>Attendance Status</label>
-                    <select required>
-                        <option value="" disabled selected>Select alternative</option>
-                        <option value="yes">Accepts with Pleasure</option>
-                        <option value="no">Declines with Regret</option>
-                    </select>
+                <div class="card">
+                    <h3>The Reception</h3>
+                    <p><strong>12:00 PM</strong><br>ST.Mary's School Auditorium<br>Top Floor</p>
+                    <a href="https://www.google.com/maps/search/?api=1&query=9.427245, 76.954834" class="btn-link">View Venue Location</a>
                 </div>
-                <div class="form-row">
-                    <label>Accommodations Note</label>
-                    <textarea rows="3" placeholder="Dietary concerns or special requests..."></textarea>
-                </div>
-                <button type="submit" class="btn-gold-solid">Validate Attendance</button>
-            </form>
+            </div>
         </div>
     </section>
 
-    <!-- LUXURY COUTUR REGISTRY LINK HOVER -->
-    <section class="registry-block">
-        <h2>Endowment</h2>
-        <div class="registry-links">
-            <a href="#" class="btn-outline-gold">Zola Registry</a>
-            <a href="#" class="btn-outline-gold">Boutique Fund</a>
-        </div>
-    </section>
+    <!-- RSVP 
+    <section>
+        <h2 class="section-title">Kindly Reply</h2>
+        <p style="color: var(--gold-dark); letter-spacing: 3px; font-size: 0.8rem; font-weight: 600;">PLEASE RESPOND BY SEPTEMBER 1, 2026</p>
+        <div class="divider"><span class="divider-diamond">♦</span></div>
 
-    <!-- FOOTER TERMINATION -->
+        <form id="rsvp" onsubmit="handleRSVP(event)">
+            <div class="form-group">
+                <label>Your Name</label>
+                <input type="text" id="name" required placeholder="Jane Doe">
+            </div>
+            <div class="form-group">
+                <label>Will you join us?</label>
+                <select id="attendance" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="yes">Joyfully Accept</option>
+                    <option value="no">Regretfully Decline</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Party Count</label>
+                <select id="guests">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Notes</label>
+                <textarea id="diet" rows="3" placeholder="Dietary restrictions or nice message..."></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Response</button>
+        </form>
+    </section>-->
+
+    <!-- REGISTRY 
+    <section id="registry" style="border-top: 1px solid rgba(197, 160, 89, 0.15);">
+        <h2 class="section-title">Registry</h2>
+        <div class="divider"><span class="divider-diamond">♦</span></div>
+        <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+            <a href="#" class="btn-link">Target Registry</a>
+            <a href="#" class="btn-link">Zola Registry</a>
+        </div>
+    </section>-->
+
+    <!-- FOOTER -->
     <footer>
-        A & T • 10.17.2026 • Design Layout Complete
+        <p>JOSSIN & MERIN • AUGUST 24, 2026</p>
+        <BR>ORIGIN EVENT PLANNERS
     </footer>
 
-    <!-- INTERACTIVE ENGINE SCRIPT -->
     <script>
-        function switchTab(event, tabId) {
-            // Remove active status from all triggers
-            document.querySelectorAll('.tab-trigger').forEach(btn => btn.classList.remove('active'));
-            // Remove active status from all content containers
-            document.querySelectorAll('.tab-content').forEach(pane => pane.classList.remove('active'));
-            
-            // Set targeted layout visible
-            event.currentTarget.classList.add('active');
-            document.getElementById(tabId).classList.add('active');
+        const weddingDate = new Date("2026-08-24T11:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            document.getElementById("days").innerHTML = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+            document.getElementById("hours").innerHTML = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+            document.getElementById("minutes").innerHTML = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+            document.getElementById("seconds").innerHTML = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+        }, 1000);
+
+        function handleRSVP(event) {
+            event.preventDefault();
+            alert(`Thank you, ${document.getElementById('name').value}! Your response was sent.`);
+            document.getElementById('rsvp').reset();
         }
     </script>
 </body>
